@@ -154,6 +154,7 @@ function replaceText(aDocument, aGroup) {
   for (var i = 0; i < nValueNodes; i++) {
     var valueNode = valueNodes.snapshotItem(i);
     let oldValue = valueNode.value;
+    valueNode.value = aGroup.replace(oldValue);
   }
 }
 
