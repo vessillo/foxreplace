@@ -78,6 +78,7 @@ function replaceText(aDocument, aGroup) {
   // TODO any other xml document won't be replaced
 
   // Replace text nodes
+  /*
   var textNodesXpath = "/html/head/title/text()"
                      + "|/html/body//text()[not(parent::script)]";
   var textNodes = aDocument.evaluate(textNodesXpath, aDocument, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
@@ -142,6 +143,17 @@ function replaceText(aDocument, aGroup) {
       let newText = aGroup.replace(scriptNode.text);
       if (newText != scriptNode.text) replaceScript(aDocument, scriptNode, newText);
     }
+  }
+  */
+   // Replace nodes with a "alt" property (suitable for images)
+   // edited by vessillo
+  var valueNodesXpath = "/html/body//@alt";
+  var valueNodes =
+      aDocument.evaluate(valueNodesXpath, aDocument, null, XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE, null);
+  var nValueNodes = valueNodes.snapshotLength;
+  for (var i = 0; i < nValueNodes; i++) {
+    var valueNode = valueNodes.snapshotItem(i);
+    let oldValue = valueNode.value;
   }
 }
 
