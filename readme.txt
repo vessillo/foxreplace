@@ -2,7 +2,7 @@
 Update replace.js
 it is aimed at limiting the replacing actions at the "alt" property of the images 
 In such way we can enable the text readers to read math formulas
-written in tex notation
+written in latex notation
 all we have to do is having a set of substitutions like these (in italian):
 f(          =   f di
 ^2         =  al quadrato
